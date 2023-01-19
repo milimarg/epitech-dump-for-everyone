@@ -1,25 +1,29 @@
 # epitech-dump-for-everyone
 
-## `apt-based`
+## Automatic Installation
+...
+
+## Manual Installation
+### `apt-based`
 ##### Debian, Ubuntu, ...
 https://github.com/louislafosse/apt-epitech-packages
 
-## `dnf-based`
+### `dnf-based`
 ##### Fedora, RHEL, ...
 https://github.com/Epitech/dump
 
-## `pacman-based`
+### `pacman-based`
 ##### Arch linux, Manjaro, ...
 *coming soon*
 
-## `zypper-based`
+### `zypper-based`
 ##### OpenSUSE
 *coming soon*
 
-## `emerge-based`
+### `emerge-based`
 ##### Gentoo
 *coming soon*
 
-## `flatpak`
+### `flatpak`
 ##### Full guide to install flatpak: https://flatpak.org/setup/
 *coming soon*
