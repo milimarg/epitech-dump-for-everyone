@@ -1,29 +1,16 @@
 # epitech-dump-for-everyone
 
-## Automatic Installation
-...
+If you wish to install the dump on a dnf-based distro, head over to https://github.com/Epitech/dump.
 
-## Manual Installation
-### `apt-based`
-##### Debian, Ubuntu, ...
-https://github.com/louislafosse/apt-epitech-packages
+You always wanted to install the Epitech dump on a non-dnf-based distro, but you're too lazy to install the packages? That script is the solution!
 
-### `dnf-based`
-##### Fedora, RHEL, ...
-https://github.com/Epitech/dump
+## How to install?
+
+```shell
+./install
+```
+
+## Tested on
 
 ### `pacman-based`
-##### Arch linux, Manjaro, ...
-*coming soon*
-
-### `zypper-based`
-##### OpenSUSE
-*coming soon*
-
-### `emerge-based`
-##### Gentoo
-*coming soon*
-
-### `flatpak`
-##### Full guide to install flatpak: https://flatpak.org/setup/
-*coming soon*
+##### Arch linux
