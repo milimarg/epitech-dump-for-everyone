@@ -4,21 +4,59 @@
 # FUNCTIONS #
 #############
 
+function archlinux_installation()
+{
+    sudo pacman -Syyu
+    sudo pacman -Sy --needed $(cat ./lists/pacman.list)
+    # lightspark
+    git clone https://aur.archlinux.org/lightspark.git
+    cd lightspark
+    makepkg -si
+    cd ..
+    rm -rf lightspark/
+    # teams
+    git clone https://aur.archlinux.org/teams.git
+    cd teams
+    makepkg -si
+    cd ..
+    rm -rf teams/
+}
+
+function opensuse_installation()
+{
+    sudo zypper ref
+    sudo zypper update
+    sudo zypper install -y $(cat ./lists/zypper.list)
+}
+
+function gentoo_installation()
+{
+    sudo emerge -avDuN world
+    sudo emerge -avy $(cat ./lists/emerge.list)
+}
+
+function flatpak_installation()
+{
+    sudo flatpak update
+    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    sudo flatpak install $(cat ./lists/flatpak.list)
+}
+
 function installation_manager() {
     echo "package manager found: $1!"
     # add user input for "y/n installation"
     if [[ $1 = "apt" ]]; then
-        sudo apt update && sudo apt upgrade && sudo apt install $(cat ./lists/apt.list)
+        echo "Head over to https://github.com/louislafosse/epitech-apt-packages"
     elif [[ $1 = "dnf" ]]; then
-        sudo dnf upgrade && sudo dnf install $(cat ./lists/dnf.list)
+        echo "Head over to https://github.com/Epitech/dump to install the dump."
     elif [[ $1 = "pacman" ]]; then
-        sudo pacman -Syyu && sudo pacman -S $(cat ./lists/pacman.list)
+        archlinux_installation
     elif [[ $1 = "zypper" ]]; then
-        sudo zypper ref && sudo zypper update && sudo zypper install $(cat ./lists/zypper.list)
+        opensuse_installation
     elif [[ $1 = "emerge" ]]; then
-        sudo emerge -avDuN world && sudo emerge -av $(cat ./lists/emerge.list)
+        gentoo_installation
     elif [[ $1 = "flatpak" ]]; then
-        sudo flatpak update && sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && sudo flatpak install $(cat ./lists/flatpak.list)
+        flatpak_installation
     fi
 }
 
@@ -27,11 +65,11 @@ function installation_manager() {
 ########
 
 # Get package manager name
-package_managers=("apta" "dnf" "pacman" "zypper" "emerge")
+package_managers=("apt" "dnf" "pacman" "zypper" "emerge")
 has_found=0
 package_manager_found=""
 for element in "${package_managers[@]}"; do
-    which "$element" > /dev/null
+    which "$element" &> /dev/null
     if [[ $? -eq 0 ]]; then
         has_found=1
         package_manager_found=$element
