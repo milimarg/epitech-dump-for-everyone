@@ -13,4 +13,4 @@ You always wanted to install the Epitech dump on a non-dnf-based distro, but you
 ## Tested on
 
 ### `pacman-based`
-##### Arch linux
+##### Arch linux, Manjaro

@@ -8,12 +8,6 @@ function archlinux_installation()
 {
     sudo pacman -Syyu
     sudo pacman -Sy --needed $(cat ./lists/pacman.list)
-    # lightspark
-    git clone https://aur.archlinux.org/lightspark.git
-    cd lightspark
-    makepkg -si
-    cd ..
-    rm -rf lightspark/
     # teams
     git clone https://aur.archlinux.org/teams.git
     cd teams
@@ -81,7 +75,7 @@ if [[ has_found -eq 1 ]]; then
     installation_manager $package_manager_found
 else
     echo "I couldn't find any known package manager..."
-    which "flatpak" > /dev/null
+    which "flatpak" &> /dev/null
     if [[ $? -eq 0 ]]; then
         echo "A flatpak setup has been found... lucky you there's an available flatpak installation for the epitech dump!"
         # add user input for "y/n installation"
