@@ -4,7 +4,14 @@
 # FUNCTIONS #
 #############
 
-function archlinux_installation()
+function apt_installation()
+{
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt install -y $(cat ./lists/apt.list)
+}
+
+function pacman_installation()
 {
     sudo pacman -Syyu
     sudo pacman -Sy --needed $(cat ./lists/pacman.list)
@@ -16,14 +23,14 @@ function archlinux_installation()
     rm -rf teams/
 }
 
-function opensuse_installation()
+function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
     sudo zypper install -y $(cat ./lists/zypper.list)
 }
 
-function gentoo_installation()
+function emerge_installation()
 {
     sudo emerge -avDuN world
     sudo emerge -avy $(cat ./lists/emerge.list)
@@ -38,9 +45,8 @@ function flatpak_installation()
 
 function installation_manager() {
     echo "package manager found: $1!"
-    # add user input for "y/n installation"
     if [[ $1 = "apt" ]]; then
-        echo "Head over to https://github.com/louislafosse/epitech-apt-packages"
+        apt_installation
     elif [[ $1 = "dnf" ]]; then
         echo "Head over to https://github.com/Epitech/dump to install the dump."
     elif [[ $1 = "pacman" ]]; then
@@ -78,7 +84,6 @@ else
     which "flatpak" &> /dev/null
     if [[ $? -eq 0 ]]; then
         echo "A flatpak setup has been found... lucky you there's an available flatpak installation for the epitech dump!"
-        # add user input for "y/n installation"
         installation_manager "flatpak"
     else
         echo "No flatpak installation couldn't be found.. Go check if your distro is eligible for flatpak: https://flatpak.org/setup/"
