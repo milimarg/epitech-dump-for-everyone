@@ -7,6 +7,8 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 ## How to install?
 
 ```shell
+git clone https://github.com/florentguittre/epitech-dump-for-everyone
+cd epitech-dump-for-everyone
 ./install
 ```
 
