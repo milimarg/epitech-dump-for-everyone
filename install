@@ -8,13 +8,13 @@ function apt_installation()
 {
     sudo apt update
     sudo apt upgrade -y
-    sudo apt install -y $(cat ./lists/apt.list)
+    sudo apt install -y $(< ./lists/apt.list)
 }
 
 function pacman_installation()
 {
     sudo pacman -Syyu
-    sudo pacman -Sy --needed $(cat ./lists/pacman.list)
+    sudo pacman -Sy --needed $(< ./lists/pacman.list)
     # teams
     git clone https://aur.archlinux.org/teams.git
     cd teams
@@ -27,20 +27,25 @@ function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
-    sudo zypper install -y $(cat ./lists/zypper.list)
+    sudo zypper install -y $(< ./lists/zypper.list)
+    # teams
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo zypper ar https://packages.microsoft.com/yumrepos/ms-teams/ ms-teams
+    sudo zypper refresh
+    sudo zypper install teams
 }
 
 function emerge_installation()
 {
     sudo emerge -avDuN world
-    sudo emerge -avy $(cat ./lists/emerge.list)
+    sudo emerge -avy $(< ./lists/emerge.list)
 }
 
 function flatpak_installation()
 {
     sudo flatpak update
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    sudo flatpak install $(cat ./lists/flatpak.list)
+    sudo flatpak install $(< ./lists/flatpak.list)
 }
 
 function installation_manager() {
@@ -50,11 +55,11 @@ function installation_manager() {
     elif [[ $1 = "dnf" ]]; then
         echo "Head over to https://github.com/Epitech/dump to install the dump."
     elif [[ $1 = "pacman" ]]; then
-        archlinux_installation
+        pacman_installation
     elif [[ $1 = "zypper" ]]; then
-        opensuse_installation
+        zypper_installation
     elif [[ $1 = "emerge" ]]; then
-        gentoo_installation
+        emerge_installation
     elif [[ $1 = "flatpak" ]]; then
         flatpak_installation
     fi
