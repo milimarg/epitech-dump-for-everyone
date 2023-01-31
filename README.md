@@ -19,3 +19,6 @@ cd epitech-dump-for-everyone
 
 ### `pacman-based`
 ##### Arch linux, Manjaro
+
+### `zypper-based`
+##### OpenSUSE
