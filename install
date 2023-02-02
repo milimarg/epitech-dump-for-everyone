@@ -41,13 +41,6 @@ function emerge_installation()
     sudo emerge -avy $(< ./lists/emerge.list)
 }
 
-function flatpak_installation()
-{
-    sudo flatpak update
-    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    sudo flatpak install $(< ./lists/flatpak.list)
-}
-
 function installation_manager() {
     echo "package manager found: $1!"
     if [[ $1 = "apt" ]]; then
@@ -60,8 +53,6 @@ function installation_manager() {
         zypper_installation
     elif [[ $1 = "emerge" ]]; then
         emerge_installation
-    elif [[ $1 = "flatpak" ]]; then
-        flatpak_installation
     fi
 }
 
@@ -86,12 +77,4 @@ if [[ has_found -eq 1 ]]; then
     installation_manager $package_manager_found
 else
     echo "I couldn't find any known package manager..."
-    which "flatpak" &> /dev/null
-    if [[ $? -eq 0 ]]; then
-        echo "A flatpak setup has been found... lucky you there's an available flatpak installation for the epitech dump!"
-        installation_manager "flatpak"
-    else
-        echo "No flatpak installation couldn't be found.. Go check if your distro is eligible for flatpak: https://flatpak.org/setup/"
-        printf "2 cases:\n%s\n%s\n" "- If you can see your distro in the list: congrats, you're saved! Go setup flatpak (on the same link) and come back to install the packages." "- If you can't see your distro in the list, I'm sorry because you won't be able to install the epitech dump on your current system... unless you install every package from source."
-    fi
 fi
