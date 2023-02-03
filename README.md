@@ -22,3 +22,6 @@ cd epitech-dump-for-everyone
 
 ### `zypper-based`
 ##### OpenSUSE
+
+### [`brew-based`](https://brew.sh)
+##### macOS 10.13+

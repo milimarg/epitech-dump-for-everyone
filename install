@@ -41,6 +41,13 @@ function emerge_installation()
     sudo emerge -avy $(< ./lists/emerge.list)
 }
 
+function brew_installation()
+{
+    brew update
+    brew upgrade
+    brew install $(< ./lists/brew.list)
+}
+
 function installation_manager() {
     echo "package manager found: $1!"
     if [[ $1 = "apt" ]]; then
@@ -53,6 +60,8 @@ function installation_manager() {
         zypper_installation
     elif [[ $1 = "emerge" ]]; then
         emerge_installation
+    elif [[ $1 = "brew" ]]; then
+        brew_installation
     fi
 }
 
@@ -61,7 +70,7 @@ function installation_manager() {
 ########
 
 # Get package manager name
-package_managers=("apt" "dnf" "pacman" "zypper" "emerge")
+package_managers=("brew" "apt" "dnf" "pacman" "zypper" "emerge")
 has_found=0
 package_manager_found=""
 for element in "${package_managers[@]}"; do
@@ -69,10 +78,11 @@ for element in "${package_managers[@]}"; do
     if [[ $? -eq 0 ]]; then
         has_found=1
         package_manager_found=$element
+        break
     fi
 done
 
-# .
+# Run commands depending of the package manager
 if [[ has_found -eq 1 ]]; then
     installation_manager $package_manager_found
 else
