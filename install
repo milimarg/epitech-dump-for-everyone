@@ -35,12 +35,6 @@ function zypper_installation()
     sudo zypper install -y teams
 }
 
-function emerge_installation()
-{
-    sudo emerge -avDuN world
-    sudo emerge -avy $(< ./lists/emerge.list)
-}
-
 function brew_installation()
 {
     brew update
@@ -58,8 +52,6 @@ function installation_manager() {
         pacman_installation
     elif [[ $1 = "zypper" ]]; then
         zypper_installation
-    elif [[ $1 = "emerge" ]]; then
-        emerge_installation
     elif [[ $1 = "brew" ]]; then
         brew_installation
     fi
@@ -70,7 +62,7 @@ function installation_manager() {
 ########
 
 # Get package manager name
-package_managers=("brew" "apt" "dnf" "pacman" "zypper" "emerge")
+package_managers=("brew" "apt" "dnf" "pacman" "zypper")
 has_found=0
 package_manager_found=""
 for element in "${package_managers[@]}"; do
