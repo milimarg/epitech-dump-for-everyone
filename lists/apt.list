@@ -11,6 +11,7 @@ gcc
 g++
 gdb
 git
+gnupg
 libc6-dev
 libgmp3-dev
 ksh
@@ -32,7 +33,6 @@ make
 nasm
 libncurses-dev
 libncurses5
-libncurses5:i386
 net-tools
 libglu1-mesa-dev
 freeglut3-dev
@@ -47,7 +47,6 @@ tar
 zip
 unzip
 python3-pip
-docker
 docker-compose
 zsh
 haskell-platform
@@ -103,4 +102,3 @@ cargo
 mariadb-server
 x264
 python3-pip
-teams
