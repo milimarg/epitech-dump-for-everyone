@@ -15,10 +15,10 @@ cd epitech-dump-for-everyone
 ## Tested on
 
 ### `apt-based`
-##### Pop!_OS
+##### Pop!_OS, Ubuntu
 
 ### `pacman-based`
-##### Arch linux, Manjaro
+##### Arch linux, Manjaro, Garuda Linux
 
 ### `zypper-based`
 ##### OpenSUSE
