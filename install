@@ -8,7 +8,7 @@ function apt_installation()
 {
     sudo apt update -qq
     sudo apt upgrade -yqq
-    sudo apt install -yqqq "$(< ./.lists/apt.list)"
+    sudo apt install -yqqq "$(cat ./.lists/apt.list)"
     # docker (fix it)
     #sudo apt-get remove docker docker-engine docker.io containerd runc
     #sudo install -m 0755 -d /etc/apt/keyrings
@@ -25,7 +25,7 @@ function apt_installation()
 function pacman_installation()
 {
     sudo pacman -Syyu
-    sudo pacman -Sy --needed "$(< ./.lists/pacman.list)"
+    sudo pacman -Sy --needed "$(cat ./.lists/pacman.list)"
     # teams
     git clone https://aur.archlinux.org/teams.git
     cd teams || (echo "Couldn't clone teams client on Arch Linux..." ; exit 1)
@@ -38,7 +38,7 @@ function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
-    sudo zypper install -y "$(< ./.lists/zypper.list)"
+    sudo zypper install -y "$(cat ./.lists/zypper.list)"
     # teams
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo zypper ar https://packages.microsoft.com/yumrepos/ms-teams/ ms-teams
@@ -50,7 +50,7 @@ function brew_installation()
 {
     brew update
     brew upgrade
-    brew install "$(< ./.lists/brew.list)"
+    brew install "$(cat ./.lists/brew.list)"
 }
 
 function run_external_installation()
