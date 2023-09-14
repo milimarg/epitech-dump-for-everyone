@@ -8,15 +8,15 @@ function apt_installation()
 {
     sudo apt update
     sudo apt upgrade -y
-    sudo apt install -y $(< ./lists/apt.list)
+    sudo apt install -y "$(< ./lists/apt.list)"
     # docker
     sudo apt-get remove docker docker-engine docker.io containerd runc
     sudo install -m 0755 -d /etc/apt/keyrings
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     sudo chmod a+r /etc/apt/keyrings/docker.gpg
     echo \
-    "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+    "deb [arch=\"$(dpkg --print-architecture)\" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    "$(. /etc/os-release && echo '$VERSION_CODENAME')" stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt update
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -25,10 +25,10 @@ function apt_installation()
 function pacman_installation()
 {
     sudo pacman -Syyu
-    sudo pacman -Sy --needed $(< ./lists/pacman.list)
+    sudo pacman -Sy --needed "$(< ./lists/pacman.list)"
     # teams
     git clone https://aur.archlinux.org/teams.git
-    cd teams
+    cd teams || (echo "Couldn't clone teams client on Arch Linux..." ; exit 1)
     makepkg -si
     cd ..
     rm -rf teams/
@@ -38,7 +38,7 @@ function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
-    sudo zypper install -y $(< ./lists/zypper.list)
+    sudo zypper install -y "$(< ./lists/zypper.list)"
     # teams
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo zypper ar https://packages.microsoft.com/yumrepos/ms-teams/ ms-teams
@@ -50,10 +50,9 @@ function brew_installation()
 {
     brew update
     brew upgrade
-    brew install $(< ./lists/brew.list)
+    brew install "$(< ./lists/brew.list)"
 }
 
-# INSTALLATION LINES TAKEN FROM OFFICIAL FEDORA DUMP (ONLY EXTERNAL INSTALLATIONS)
 function run_external_installation()
 {
     # Criterion
@@ -64,32 +63,12 @@ function run_external_installation()
     ldconfig
     rm -rf criterion-2.4.0.tar.xz criterion-2.4.0/
 
-    # Sbt
-    curl -sSL "https://github.com/sbt/sbt/releases/download/v1.3.13/sbt-1.3.13.tgz" | tar xz
-    mv sbt /usr/local/share
-    ln -s '/usr/local/share/sbt/bin/sbt' '/usr/local/bin'
-
-    # Gradle
-    wget https://services.gradle.org/distributions/gradle-7.2-bin.zip
-    mkdir /opt/gradle && unzip -d /opt/gradle gradle-7.2-bin.zip && rm -f gradle-7.2-bin.zip
-    echo 'export PATH=$PATH:/opt/gradle/gradle-7.2/bin' >> /etc/profile
-
-    # Stack
-    curl -sSL https://get.haskellstack.org/ | sh
-
     # CONFIG EMACS
     git clone https://github.com/Epitech/epitech-emacs.git
-    cd epitech-emacs
+    cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
     git checkout 278bb6a630e6474f99028a8ee1a5c763e943d9a3
     ./INSTALL.sh system
     cd .. && rm -rf epitech-emacs
-
-    # CONFIG VIM
-    git clone https://github.com/Epitech/vim-epitech.git
-    cd vim-epitech
-    git checkout ec936f2a49ca673901d56598e141932fd309ddac
-    ./install.sh
-    cd .. && rm -rf vim-epitech
 }
 
 function installation_manager() {
@@ -126,8 +105,8 @@ done
 
 # Run commands depending of the package manager
 if [[ has_found -eq 1 ]]; then
-    installation_manager $package_manager_found
+    installation_manager "$package_manager_found"
     run_external_installation
 else
-    echo "I couldn't find any known package manager..."
+    echo "Couldn't find any known package manager..."
 fi
