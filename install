@@ -8,7 +8,7 @@ function apt_installation()
 {
     sudo apt update -qq
     sudo apt upgrade -yqq
-    xargs -a ./.lists/apt.list sudo apt install -yqqq
+    xargs -a ./.lists/apt.list sudo apt install -y
     # docker (fix it)
     #sudo apt-get remove docker docker-engine docker.io containerd runc
     #sudo install -m 0755 -d /etc/apt/keyrings
@@ -55,14 +55,6 @@ function brew_installation()
 
 function run_external_installation()
 {
-    # Criterion
-    curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.0/criterion-2.4.0-linux-x86_64.tar.xz" -o criterion-2.4.0.tar.xz || (echo "Couldn't clone criterion..." ; exit 1)
-    tar xf criterion-2.4.0.tar.xz
-    cp -r criterion-2.4.0/* /usr/local/
-    echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local.conf
-    ldconfig
-    rm -rf criterion-2.4.0.tar.xz criterion-2.4.0/
-
     # CONFIG EMACS
     git clone https://github.com/Epitech/epitech-emacs.git
     cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
