@@ -56,7 +56,7 @@ function brew_installation()
 function run_external_installation()
 {
     # Criterion
-    curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.0/criterion-2.4.0-linux-x86_64.tar.xz" -o criterion-2.4.0.tar.xz
+    curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.0/criterion-2.4.0-linux-x86_64.tar.xz" -o criterion-2.4.0.tar.xz || (echo "Couldn't clone criterion..." ; exit 1)
     tar xf criterion-2.4.0.tar.xz
     cp -r criterion-2.4.0/* /usr/local/
     echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local.conf
@@ -67,7 +67,7 @@ function run_external_installation()
     git clone https://github.com/Epitech/epitech-emacs.git
     cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
     git checkout 278bb6a630e6474f99028a8ee1a5c763e943d9a3
-    ./INSTALL.sh system
+    ./INSTALL.sh local
     cd .. && rm -rf epitech-emacs
 }
 
@@ -96,7 +96,7 @@ has_found=0
 package_manager_found=""
 for element in "${package_managers[@]}"; do
     which "$element" &> /dev/null
-    if [[ $? -eq 0 ]]; then
+    if [[ "$?" -eq 0 ]]; then
         has_found=1
         package_manager_found=$element
         break
