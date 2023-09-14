@@ -97,6 +97,12 @@ done
 
 # Run commands depending of the package manager
 if [[ has_found -eq 1 ]]; then
+    which "sudo" &> /dev/null
+    if [[ "$?" -ne 0 ]]; then
+        echo "sudo is not installed."
+        #echo "Installing sudo..."
+        exit 1
+    fi
     installation_manager "$package_manager_found"
     run_external_installation
 else
