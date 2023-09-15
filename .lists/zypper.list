@@ -38,7 +38,6 @@ unzip
 valgrind
 vim
 emacs-nox
-which
 xcb-util-image-devel
 zip
 zsh

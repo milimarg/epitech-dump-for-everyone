@@ -7,7 +7,7 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 ## How to install?
 
 ```shell
-git clone https://github.com/florentguittre/epitech-dump-for-everyone
+git clone https://github.com/florentg314/epitech-dump-for-everyone
 cd epitech-dump-for-everyone
 ./install
 ```
@@ -21,7 +21,7 @@ cd epitech-dump-for-everyone
 ##### Arch linux, Manjaro, Garuda Linux
 
 ### `zypper-based`
-##### OpenSUSE
+##### OpenSUSE Tumbleweed
 
-### [`brew-based`](https://brew.sh)
-##### macOS 10.13+
+### [`brew-based`](https://brew.sh) (brew must be installed before running the script)
+##### macOS High Sierra (10.13)
