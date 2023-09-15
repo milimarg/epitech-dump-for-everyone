@@ -54,8 +54,6 @@ wireshark-qt
 nodejs
 libvirt
 virt-install
-ghc
-cabal-install
 go
 systemd
 libgudev
