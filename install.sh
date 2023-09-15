@@ -31,10 +31,12 @@ function zypper_installation()
     # docker
     id=$(grep -E "^ID=" /etc/os-release)
     if [[ $id == "ID=\"opensuse-tumbleweed\"" ]]; then
-        zypper install docker docker-compose docker-compose-switch
+        zypper install -y docker docker-compose docker-compose-switch
     fi
     if [[ $id == "ID=\"opensuse-leap\"" ]]; then
-        echo "it's opensuse leap"
+        zypper addrepo https://download.opensuse.org/repositories/devel:languages:python/15.5/devel:languages:python.repo
+        zypper refresh
+        zypper install -y docker python3-docker-compose
     fi
 }
 
