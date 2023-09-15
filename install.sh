@@ -76,7 +76,7 @@ package_managers=("brew" "apt" "dnf" "pacman" "zypper")
 has_found=0
 package_manager_found=""
 for element in "${package_managers[@]}"; do
-    which "$element" &> /dev/null
+    type "$element" &> /dev/null
     if [[ "$?" -eq 0 ]]; then
         has_found=1
         package_manager_found=$element
@@ -86,7 +86,7 @@ done
 
 # Run commands depending of the package manager
 if [[ has_found -eq 1 ]]; then
-    which "sudo" &> /dev/null
+    type "sudo" &> /dev/null
     if [[ "$?" -ne 0 ]]; then
         echo "sudo is not installed."
         echo "run this script as root, either install sudo or by using su."
