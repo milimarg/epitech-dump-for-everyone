@@ -70,3 +70,4 @@ irrlicht-devel
 rust
 cargo
 mariadb-server
+criterion

@@ -50,3 +50,4 @@ rust
 cargo-c
 mariadb
 x264
+criterion
