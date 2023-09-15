@@ -9,7 +9,7 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 ```shell
 git clone https://github.com/florentg314/epitech-dump-for-everyone
 cd epitech-dump-for-everyone
-./install
+./install.sh
 ```
 
 ## Tested on
@@ -23,5 +23,7 @@ cd epitech-dump-for-everyone
 ### `zypper-based`
 ##### OpenSUSE Tumbleweed
 
-### [`brew-based`](https://brew.sh) (brew must be installed before running the script)
+### [`brew-based`](https://brew.sh)
+⚠️ brew must be installed before running the script. \
+⚠️ Docker won't be installed with the script, you can get it [here](https://docs.docker.com/desktop/install/mac-install/).
 ##### macOS High Sierra (10.13)
