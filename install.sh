@@ -30,12 +30,11 @@ function zypper_installation()
     xargs -a ./.lists/zypper.list sudo zypper install -y
     # docker
     id=$(grep -E "^ID=" /etc/os-release)
-    if [[ id -eq "ID=\"opensuse-tumbleweed\"" ]]; then
-      echo "it's opensuse leap"
-      zypper install docker docker-compose docker-compose-switch
+    if [[ $id == "ID=\"opensuse-tumbleweed\"" ]]; then
+        zypper install docker docker-compose docker-compose-switch
     fi
-    if [[ id -eq "ID=\"opensuse-leap\"" ]]; then
-          echo "it's opensuse leap"
+    if [[ $id == "ID=\"opensuse-leap\"" ]]; then
+        echo "it's opensuse leap"
     fi
 }
 
