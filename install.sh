@@ -28,6 +28,15 @@ function zypper_installation()
     sudo zypper ref
     sudo zypper update
     xargs -a ./.lists/zypper.list sudo zypper install -y
+    # docker
+    id=$(grep -E "^ID=" /etc/os-release)
+    if [[ id -eq "ID=\"opensuse-tumbleweed\"" ]]; then
+      echo "it's opensuse leap"
+      zypper install docker docker-compose docker-compose-switch
+    fi
+    if [[ id -eq "ID=\"opensuse-leap\"" ]]; then
+          echo "it's opensuse leap"
+    fi
 }
 
 function brew_installation()
@@ -42,7 +51,6 @@ function run_external_installation()
     # CONFIG EMACS
     git clone https://github.com/Epitech/epitech-emacs.git
     cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
-    git checkout 278bb6a630e6474f99028a8ee1a5c763e943d9a3
     ./INSTALL.sh local
     cd .. && rm -rf epitech-emacs
 }
@@ -80,7 +88,7 @@ if [[ has_found -eq 1 ]]; then
     which "sudo" &> /dev/null
     if [[ "$?" -ne 0 ]]; then
         echo "sudo is not installed."
-        #echo "Installing sudo..."
+        echo "run this script as root, either install sudo or by using su."
         exit 1
     fi
     installation_manager "$package_manager_found"
