@@ -67,3 +67,5 @@ cargo
 mariadb
 x264
 docker
+tar
+xz

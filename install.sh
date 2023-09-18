@@ -54,6 +54,10 @@ function run_external_installation()
     cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
     ./INSTALL.sh local
     cd .. && rm -rf epitech-emacs
+    # ----- NON-BREW INSTALLATION -----
+    if [[ $1 = "brew" ]]; then
+      return;
+    fi
     # CRITERION
     curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2-linux-x86_64.tar.xz" -o criterion.tar.xz
     tar -xf criterion.tar.xz
@@ -100,7 +104,7 @@ if [[ has_found -eq 1 ]]; then
         exit 1
     fi
     installation_manager "$package_manager_found"
-    run_external_installation
+    run_external_installation "$package_manager_found"
 else
     echo "Couldn't find any known package manager..."
 fi
