@@ -2,7 +2,7 @@
 
 function apt_installation()
 {
-    sudo apt update -qq
+    sudo apt update -yqq
     sudo apt upgrade -yqq
     xargs -a ./.lists/apt.list sudo apt install -y
     # docker
@@ -40,13 +40,6 @@ function zypper_installation()
     fi
 }
 
-function brew_installation()
-{
-    brew update
-    brew upgrade
-    xargs -a ./.lists/brew.list brew install
-}
-
 function run_external_installation()
 {
     # CONFIG EMACS
@@ -54,10 +47,6 @@ function run_external_installation()
     cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
     ./INSTALL.sh local
     cd .. && rm -rf epitech-emacs
-    # ----- NON-BREW INSTALLATION -----
-    if [[ $1 = "brew" ]]; then
-      return;
-    fi
     # CRITERION
     curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2-linux-x86_64.tar.xz" -o criterion.tar.xz
     tar -xf criterion.tar.xz
@@ -77,13 +66,11 @@ function installation_manager() {
         pacman_installation
     elif [[ $1 = "zypper" ]]; then
         zypper_installation
-    elif [[ $1 = "brew" ]]; then
-        brew_installation
     fi
 }
 
 # Get package manager name
-package_managers=("brew" "apt" "dnf" "pacman" "zypper")
+package_managers=("apt" "dnf" "pacman" "zypper")
 has_found=0
 package_manager_found=""
 for element in "${package_managers[@]}"; do
