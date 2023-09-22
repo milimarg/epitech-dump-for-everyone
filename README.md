@@ -21,9 +21,4 @@ cd epitech-dump-for-everyone
 ##### Arch linux, Manjaro, Garuda Linux
 
 ### `zypper-based`
-##### OpenSUSE Tumbleweed
-
-### [`brew-based`](https://brew.sh)
-⚠️ brew must be installed before running the script. \
-⚠️ Docker won't be installed with the script, you can get it [here](https://docs.docker.com/desktop/install/mac-install/).
-##### macOS High Sierra (10.13)
+##### OpenSUSE Tumbleweed, OpenSUSE Leap
