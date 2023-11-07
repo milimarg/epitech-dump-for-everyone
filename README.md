@@ -14,11 +14,11 @@ cd epitech-dump-for-everyone
 
 ## Tested on
 
-### `apt-based`
+### `Ubuntu/Ubuntu-based (apt)`
 ##### Pop!_OS, Ubuntu
 
-### `pacman-based`
-##### Arch linux, Manjaro, Garuda Linux
+### `Arch Linux/Arch Linux-based (pacman)`
+##### Arch Linux, Manjaro, Garuda Linux
 
-### `zypper-based`
+### `Open SUSE (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
