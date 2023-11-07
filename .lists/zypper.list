@@ -4,7 +4,7 @@ cmake
 cunit-devel
 curl
 flac
-freetype
+freetype2
 gcc
 gcc-c++
 gdb
