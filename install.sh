@@ -1,10 +1,19 @@
 #!/bin/bash
 
+function install_packages()
+{
+  xargs -a "$1"
+  if [[ "$?" -ne 0 ]]; then
+    echo "Failed to install packages"
+    exit 1
+  fi
+}
+
 function apt_installation()
 {
     sudo apt update -yqq
     sudo apt upgrade -yqq
-    xargs -a ./.lists/apt.list sudo apt install -y
+    install_packages "./.lists/apt.list sudo apt install -y"
     # docker
     sudo install -m 0755 -d /etc/apt/keyrings
     id=$(. /etc/os-release && echo "$ID")
@@ -21,14 +30,14 @@ function apt_installation()
 function pacman_installation()
 {
     sudo pacman -Syyu
-    xargs -a ./.lists/pacman.list sudo pacman -Sy --needed
+    install_packages "./.lists/pacman.list sudo pacman -Sy --needed"
 }
 
 function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
-    xargs -a ./.lists/zypper.list sudo zypper install -y
+    install_packages "./.lists/zypper.list sudo zypper install -y"
     # docker
     id=$(grep -E "^ID=" /etc/os-release)
     if [[ $id == "ID=\"opensuse-tumbleweed\"" ]]; then
