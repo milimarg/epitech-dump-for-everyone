@@ -17,7 +17,6 @@ libgmp3-dev
 ksh
 elfutils
 libjpeg-dev
-libjpeg62-turbo-dev
 libarmadillo-dev
 libhdf4-alt-dev
 libhdf5-dev
