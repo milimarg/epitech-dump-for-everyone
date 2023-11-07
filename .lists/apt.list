@@ -47,7 +47,6 @@ python3-pip
 docker-compose
 zsh
 php
-linux-generic
 python3-numpy
 python3
 rlwrap
