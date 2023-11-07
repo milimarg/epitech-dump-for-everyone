@@ -12,7 +12,7 @@ function apt_installation()
 {
     sudo apt update -yqq
     sudo apt upgrade -yqq
-    xargs -a "./.lists/apt.list sudo apt install -y"
+    xargs -a ./.lists/apt.list sudo apt install -y
     check_packages
     # docker
     sudo install -m 0755 -d /etc/apt/keyrings
@@ -30,7 +30,7 @@ function apt_installation()
 function pacman_installation()
 {
     sudo pacman -Syyu
-    xargs -a "./.lists/pacman.list sudo pacman -Sy --needed"
+    xargs -a ./.lists/pacman.list sudo pacman -Sy --needed
     check_packages
 }
 
@@ -38,7 +38,7 @@ function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
-    xargs -a "./.lists/zypper.list sudo zypper install -y"
+    xargs -a ./.lists/zypper.list sudo zypper install -y
     check_packages
     # docker
     id=$(grep -E "^ID=" /etc/os-release)
