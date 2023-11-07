@@ -45,7 +45,6 @@ unzip
 python3-pip
 docker-compose
 zsh
-php
 python3-numpy
 python3
 rlwrap
@@ -76,15 +75,6 @@ tuareg-mode
 libvirt-daemon-system
 golang
 php
-php-bcmath
-php-cli
-php-gd
-php-mbstring
-php-mysql
-php-pdo
-php-pear
-php-xml
-php-phar-io-version
 libsfml-dev
 libcsfml-dev
 libirrlicht1.8
