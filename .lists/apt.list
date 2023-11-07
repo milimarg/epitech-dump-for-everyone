@@ -17,18 +17,15 @@ libgmp3-dev
 ksh
 elfutils
 libjpeg-dev
-libjpeg-turbo8-dev
-libjpeg8-dev
+libjpeg62-turbo-dev
 libarmadillo-dev
 libhdf4-alt-dev
 libhdf5-dev
-libmlpack-dev
 libnetcdf-dev
 libtiff5-dev
 libsdl2-2.0-0
 libx11-dev
 libxext-dev
-ltrace
 make
 nasm
 libncurses-dev
@@ -49,7 +46,6 @@ unzip
 python3-pip
 docker-compose
 zsh
-haskell-platform
 php
 linux-generic
 python3-numpy
@@ -80,7 +76,6 @@ nodejs
 emacs
 tuareg-mode
 libvirt-daemon-system
-haskell-platform
 golang
 php
 php-bcmath
