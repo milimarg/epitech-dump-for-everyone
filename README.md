@@ -14,6 +14,9 @@ cd epitech-dump-for-everyone
 
 ## Tested on
 
+### `Debian (apt)`
+##### Debian
+
 ### `Ubuntu/Ubuntu-based (apt)`
 ##### Pop!_OS, Ubuntu
 

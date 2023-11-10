@@ -62,9 +62,9 @@ function run_external_installation()
     # CRITERION
     curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2-linux-x86_64.tar.xz" -o criterion.tar.xz
     tar -xf criterion.tar.xz
-    cp -r criterion-2.4.2/* /usr/local
-    echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local.conf
-    ldconfig
+    sudo cp -r criterion-2.4.2/* /usr/local
+    sudo echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local.conf
+    sudo ldconfig
     rm -rf criterion-2.4.2/ criterion.tar.xz
 }
 
