@@ -12,13 +12,13 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 
 ## Tested on
 
-### `Debian (apt)`
-##### Debian
+### `Debian-based (apt)`
+##### Debian, Crunchbang++
 
-### `Ubuntu/Ubuntu-based (apt)`
-##### Pop!_OS, Ubuntu
+### `Ubuntu-based (apt)`
+##### Ubuntu, Pop!_OS
 
-### `Arch Linux/Arch Linux-based (pacman)`
+### `Arch Linux-based (pacman)`
 ##### Arch Linux, Manjaro, Garuda Linux
 
 ### `Open SUSE (zypper)`
