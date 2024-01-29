@@ -15,19 +15,8 @@ function apt_installation()
     xargs -a ./.lists/apt.list sudo apt install -y
     check_packages
     # DOCKER
-    sudo install -m 0755 -d /etc/apt/keyrings
-    id=$(. /etc/os-release && echo "$ID")
-    if [ "$id" != "ubuntu" ] && [ "$id" != "debian" ]; then
-      id=$(. /etc/os-release && echo "$ID_LIKE" | cut -d " " -f 1)
-    fi
-    sudo curl -fsSL https://download.docker.com/linux/"$id"/gpg -o /etc/apt/keyrings/docker.asc
-    sudo chmod a+r /etc/apt/keyrings/docker.asc
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/$id \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt update -yqq
-    sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
 }
 
 function pacman_installation()
