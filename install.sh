@@ -20,8 +20,8 @@ function apt_installation()
     if [ "$id" != "ubuntu" ] && [ "$id" != "debian" ]; then
       id=$(. /etc/os-release && echo "$ID_LIKE" | cut -d " " -f 1)
     fi
-    curl -fsSL https://download.docker.com/linux/"$id"/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    sudo curl -fsSL https://download.docker.com/linux/"$id"/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
     echo \
       "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/$id \
       $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
