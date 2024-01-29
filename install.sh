@@ -17,6 +17,9 @@ function apt_installation()
     # docker
     sudo install -m 0755 -d /etc/apt/keyrings
     id=$(. /etc/os-release && echo "$ID")
+    if [ "$id" != "ubuntu" ] && [ "$id" != "debian" ]; then
+      id=$(. /etc/os-release && echo "$ID_LIKE" | cut -d " " -f 1)
+    fi
     curl -fsSL https://download.docker.com/linux/"$id"/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     sudo chmod a+r /etc/apt/keyrings/docker.gpg
     echo \
