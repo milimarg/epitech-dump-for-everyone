@@ -14,7 +14,7 @@ function apt_installation()
     sudo apt upgrade -yqq
     xargs -a ./.lists/apt.list sudo apt install -y
     check_packages
-    # docker
+    # DOCKER
     sudo install -m 0755 -d /etc/apt/keyrings
     id=$(. /etc/os-release && echo "$ID")
     if [ "$id" != "ubuntu" ] && [ "$id" != "debian" ]; then
@@ -23,8 +23,8 @@ function apt_installation()
     curl -fsSL https://download.docker.com/linux/"$id"/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     sudo chmod a+r /etc/apt/keyrings/docker.gpg
     echo \
-      "deb [arch=\"$(dpkg --print-architecture)\" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/$id \
-      \"$(. /etc/os-release && echo "$VERSION_CODENAME")\" stable" | \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/$id \
+      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt update -yqq
     sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -57,18 +57,12 @@ function zypper_installation()
 
 function run_external_installation()
 {
-    # CONFIG EMACS
+    # CONFIG EMACS EPITECH
     git clone https://github.com/Epitech/epitech-emacs.git
     cd epitech-emacs || (echo "Couldn't clone epitech emacs configuration..." ; exit 1)
     ./INSTALL.sh local
     cd .. && rm -rf epitech-emacs
-    # CRITERION
-    curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2-linux-x86_64.tar.xz" -o criterion.tar.xz
-    tar -xf criterion.tar.xz
-    sudo cp -r criterion-2.4.2/* /usr/local
-    sudo echo "/usr/local/lib" > /etc/ld.so.conf.d/usr-local.conf
-    sudo ldconfig
-    rm -rf criterion-2.4.2/ criterion.tar.xz
+    # CRITERION --- TO DO
 }
 
 function installation_manager() {
