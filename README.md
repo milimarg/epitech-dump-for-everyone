@@ -7,6 +7,8 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 ## How to install?
 
 ```shell
+git clone https://github.com/milimarg/epitech-dump-for-everyone
+cd epitech-dump-for-everyone
 ./install.sh
 ```
 
@@ -20,6 +22,8 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 
 ### `Arch Linux-based (pacman)`
 ##### Arch Linux, Manjaro, Garuda Linux
+:warning: Haskell Compiler won't be installed
 
-### `Open SUSE (zypper)`
+### `Open SUSE (zypper)` (no CSFML installed)
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
+:warning: CSFML won't be installed
