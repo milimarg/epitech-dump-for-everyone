@@ -24,6 +24,6 @@ cd epitech-dump-for-everyone
 ##### Arch Linux, Manjaro, Garuda Linux
 :warning: Haskell Compiler won't be installed
 
-### `Open SUSE (zypper)` (no CSFML installed)
+### `Open SUSE (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
 :warning: CSFML won't be installed
