@@ -15,7 +15,7 @@ cd epitech-dump-for-everyone
 ## Tested on
 
 ### `Debian-based (apt)`
-##### Debian, Crunchbang++
+##### Debian, Crunchbang++, Kali Linux
 
 ### `Ubuntu-based (apt)`
 ##### Ubuntu, Pop!_OS
