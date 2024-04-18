@@ -10,8 +10,8 @@ function check_packages()
 
 function apt_installation()
 {
-    sudo apt update -yqq
-    sudo apt upgrade -yqq
+    sudo apt update -y
+    sudo apt upgrade -y
     xargs -a ./.lists/apt.list sudo apt install -y
     check_packages
     # DOCKER
@@ -60,6 +60,7 @@ function installation_manager() {
         apt_installation
     elif [[ $1 = "dnf" ]]; then
         echo "Head over to https://github.com/Epitech/dump to install the dump."
+        exit 0
     elif [[ $1 = "pacman" ]]; then
         pacman_installation
     elif [[ $1 = "zypper" ]]; then

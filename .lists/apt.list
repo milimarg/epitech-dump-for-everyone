@@ -28,7 +28,6 @@ libxext-dev
 make
 nasm
 libncurses-dev
-libncurses5
 net-tools
 libglu1-mesa-dev
 freeglut3-dev
@@ -71,7 +70,6 @@ tcpdump
 wireshark
 nodejs
 emacs
-tuareg-mode
 libvirt-daemon-system
 golang
 php
