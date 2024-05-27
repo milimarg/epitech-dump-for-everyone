@@ -6,8 +6,8 @@ You've always wanted to install the Epitech dump on a non-dnf-based distro, but 
 
 - [How to install?](#how-to-install)
 - [Tested on](#tested-on)
-- [Install Raylib Dependencies](#install-raylib-dependencies) (even on Fedora)
-- [Install Raylib](#install-raylib)
+- [Install Raylib Dependencies](#install-raylib-dependencies) (even on Fedora) (TEK2/TEK3)
+- [Install Raylib](#install-raylib) (TEK2/TEK3)
 
 ## How to install?
 
