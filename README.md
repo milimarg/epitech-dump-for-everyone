@@ -37,7 +37,9 @@ cd epitech-dump-for-everyone
 
 ### apt
 
-:information_source: soon
+```shell
+sudo apt install libwayland-dev libxkbcommon-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev
+```
 
 ### pacman
 
