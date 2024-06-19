@@ -19,6 +19,14 @@ function apt_installation()
     sudo sh get-docker.sh
 }
 
+function dnf_installation()
+{
+      sudo dnf update
+      xargs -a ./.lists/dnf.list sudo dnf install
+      check_packages
+      # TODO: install docker
+}
+
 function pacman_installation()
 {
     sudo pacman -Syyu
@@ -52,6 +60,12 @@ function run_external_installation()
     ./INSTALL.sh local
     cd .. && rm -rf epitech-emacs
     # CRITERION --- TO DO
+    # Raylib
+    git clone https://github.com/raysan5/raylib.git raylib
+    cd raylib/src/ || (echo "Couldn't clone raylib repository..."; exit 1)
+    make PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=SHARED
+    sudo make install RAYLIB_LIBTYPE=SHARED
+    cd ../../ && rm -rf raylib
 }
 
 function installation_manager() {
@@ -59,7 +73,7 @@ function installation_manager() {
     if [[ $1 = "apt" ]]; then
         apt_installation
     elif [[ $1 = "dnf" ]]; then
-        echo "Head over to https://github.com/Epitech/dump to install the dump."
+        dnf_installation
         exit 0
     elif [[ $1 = "pacman" ]]; then
         pacman_installation
