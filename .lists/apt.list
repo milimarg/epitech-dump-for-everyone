@@ -85,3 +85,9 @@ x264
 python3-pip
 xz-utils
 ghc
+libwayland-dev
+libxkbcommon-dev
+libxcursor-dev
+libxrandr-dev
+libxinerama-dev
+libxi-dev

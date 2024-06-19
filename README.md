@@ -27,39 +27,8 @@ cd epitech-dump-for-everyone
 
 ### `Arch Linux-based (pacman)`
 ##### Arch Linux, Manjaro, Garuda Linux
-:warning: Haskell Compiler won't be installed
+:warning: Haskell Compiler and Raylib won't be installed
 
 ### `Open SUSE (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
-:warning: CSFML won't be installed
-
-## Install Raylib (Dependencies)
-
-### apt
-
-```shell
-sudo apt install libwayland-dev libxkbcommon-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev
-```
-
-### pacman
-
-:information_source: soon
-
-### zypper
-
-:information_source: soon
-
-### dnf
-
-```shell
-sudo dnf install wayland-devel libxkbcommon-devel libXcursor-devel libXrandr-devel libXinerama-devel libXi-devel
-```
-
-## Install Raylib
-
-```shell
-git clone https://github.com/raysan5/raylib.git raylib
-cd raylib/src/
-make PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=SHARED
-sudo make install RAYLIB_LIBTYPE=SHARED
-```
+:warning: CSFML and Raylib won't be installed
