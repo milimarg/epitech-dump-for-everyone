@@ -74,7 +74,6 @@ function installation_manager() {
         apt_installation
     elif [[ $1 = "dnf" ]]; then
         dnf_installation
-        exit 0
     elif [[ $1 = "pacman" ]]; then
         pacman_installation
     elif [[ $1 = "zypper" ]]; then
