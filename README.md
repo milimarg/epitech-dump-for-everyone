@@ -18,6 +18,9 @@ cd epitech-dump-for-everyone
 ### `Ubuntu-based (apt)`
 ##### Ubuntu, Pop!_OS
 
+### `Fedora-based (dnf)`
+##### Fedora
+
 ### `Arch Linux-based (pacman)`
 ##### Arch Linux, Manjaro, Garuda Linux
 :warning: Haskell Compiler and Raylib won't be installed
