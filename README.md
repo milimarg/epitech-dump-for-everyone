@@ -13,9 +13,9 @@ cd epitech-dump-for-everyone
 ## To do
 
 - [ ] Install docker for dnf-based
-- [ ] Install CSFML for zypper-based
-- [ ] Install Raylib for pacman-based and zypper-based
-- [ ] Install Haskell Compiler for pacman-based
+- [ ] Add CSFML in zypper-based packages
+- [ ] Add Raylib dependencies in pacman-based and zypper-based packages
+- [ ] Add Haskell Compiler in pacman-based packages
 
 ## Tested on
 
