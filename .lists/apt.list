@@ -91,3 +91,4 @@ libxcursor-dev
 libxrandr-dev
 libxinerama-dev
 libxi-dev
+xclip
