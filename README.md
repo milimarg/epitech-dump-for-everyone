@@ -10,6 +10,13 @@ cd epitech-dump-for-everyone
 ./install.sh
 ```
 
+## To do
+
+- [ ] Install docker for dnf-based
+- [ ] Install CSFML for zypper-based
+- [ ] Install Raylib for pacman-based and zypper-based
+- [ ] Install Haskell Compiler for pacman-based
+
 ## Tested on
 
 ### `Debian-based (apt)`
