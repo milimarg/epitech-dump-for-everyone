@@ -2,6 +2,8 @@
 
 source ./.subscripts/get_packet_manager.sh
 source ./.subscripts/install_needed_packages.sh
+source ./.subscripts/add_emacs_configuration.sh
+source ./.subscripts/install_raylib.sh
 
 check_if_sudo_is_installed
 found_package_manager=$?
@@ -43,19 +45,19 @@ for choice in "${selected_choices[@]}"; do
               install_needed_packages "$found_package_manager"
               ;;
           2)
-              echo "Vous avez choisi l'Option 2"
+              add_emacs_configuration
               ;;
           3)
-              echo "Vous avez choisi l'Option 3"
+              #TODO: install criterion from sources
               ;;
           4)
-              echo "Vous avez choisi l'Option 4"
+              install_raylib
               ;;
           5)
-
+              #TODO: install coding style checker
               ;;
           6)
-
+              #TODO: generate ssh key and copy public key in clipboard with xclip
               ;;
   esac
 done
