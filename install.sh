@@ -9,7 +9,6 @@ check_if_sudo_is_installed
 found_package_manager=$?
 
 #TODO: merge 2 arrays "package_managers"
-#TODO: install dialog package before everything
 
 HEIGHT=15
 WIDTH=50
@@ -50,7 +49,7 @@ IFS=' ' read -r -a selected_choices <<< "$CHOICES"
 for choice in "${selected_choices[@]}"; do
   case "$choice" in
           1)
-              install_needed_packages "$found_package_manager"
+              install_needed_packages "$found_package_manager" 0
               ;;
           2)
               add_emacs_configuration
@@ -60,7 +59,7 @@ for choice in "${selected_choices[@]}"; do
               ;;
           4)
               #TODO: install raylib requirements
-              install_raylib
+              install_raylib "$found_package_manager"
               ;;
           5)
               #TODO: install coding style checker

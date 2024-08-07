@@ -1,0 +1,6 @@
+wayland-devel
+libxkbcommon-devel
+libXcursor-devel
+libXrandr-devel
+libXinerama-devel
+libXi-devel

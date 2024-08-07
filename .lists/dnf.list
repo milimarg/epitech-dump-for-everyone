@@ -96,10 +96,3 @@ rust.x86_64
 cargo.x86_64
 mariadb-server.x86_64
 xclip
-
-wayland-devel
-libxkbcommon-devel
-libXcursor-devel
-libXrandr-devel
-libXinerama-devel
-libXi-devel

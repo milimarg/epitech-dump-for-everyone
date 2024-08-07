@@ -1,0 +1,6 @@
+libwayland-dev
+libxkbcommon-dev
+libxcursor-dev
+libxrandr-dev
+libxinerama-dev
+libxi-dev
