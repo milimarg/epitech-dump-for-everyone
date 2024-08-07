@@ -4,3 +4,5 @@ libXcursor-devel
 libXrandr-devel
 libXinerama-devel
 libXi-devel
+make.x86_64
+gcc.x86_64

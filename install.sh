@@ -18,10 +18,10 @@ MENU="Choose what to install (space):"
 
 OPTIONS=(1 "Install needed packages" off
          2 "Add emacs configuration (tek1)" off
-         3 "Install criterion" off
+         3 "Install criterion [TODO]" off
          4 "Install raylib (tek2)" off
-         5 "Download coding style checker" off
-         6 "Generate SSH key for github" off)
+         5 "Download coding style checker [TODO]" off
+         6 "Generate SSH key for github [TODO]" off)
 
 type dialog &> /dev/null
 
@@ -58,7 +58,6 @@ for choice in "${selected_choices[@]}"; do
               #TODO: install criterion from sources
               ;;
           4)
-              #TODO: install raylib requirements
               install_raylib "$found_package_manager"
               ;;
           5)
