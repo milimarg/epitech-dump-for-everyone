@@ -24,6 +24,13 @@ OPTIONS=(1 "Install needed packages" off
          5 "Download coding style checker" off
          6 "Generate SSH key for github" off)
 
+type dialog &> /dev/null
+
+if [ $? -ne 0 ]; then
+  echo "dialog is not installed. Please install it and then run this script."
+  exit 1
+fi
+
 CHOICES=$(dialog --clear \
                  --backtitle "$BACKTITLE" \
                  --checklist "$MENU" \
