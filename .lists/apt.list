@@ -85,10 +85,11 @@ x264
 python3-pip
 xz-utils
 ghc
+xclip
+
 libwayland-dev
 libxkbcommon-dev
 libxcursor-dev
 libxrandr-dev
 libxinerama-dev
 libxi-dev
-xclip

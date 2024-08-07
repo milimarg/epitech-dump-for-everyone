@@ -9,6 +9,7 @@ check_if_sudo_is_installed
 found_package_manager=$?
 
 #TODO: merge 2 arrays "package_managers"
+#TODO: install dialog package before everything
 
 HEIGHT=15
 WIDTH=50
@@ -51,6 +52,7 @@ for choice in "${selected_choices[@]}"; do
               #TODO: install criterion from sources
               ;;
           4)
+              #TODO: install raylib requirements
               install_raylib
               ;;
           5)

@@ -11,6 +11,7 @@ function apt_installation()
     # DOCKER
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
+    rm get-docker.sh
 }
 
 function dnf_installation()
