@@ -1,23 +1,19 @@
 #!/bin/bash
 
-source ./check_packages.sh
+source ./.subscripts/check_packages.sh
 
 function apt_installation()
 {
     sudo apt update -y
     sudo apt upgrade -y
-    xargs -a ../.lists/apt.list sudo apt install -y
+    xargs -a ./.lists/apt.list sudo apt install -y
     check_packages
-    # DOCKER
-    curl -fsSL https://get.docker.com -o get-docker.sh
-    sudo sh get-docker.sh
-    rm get-docker.sh
 }
 
 function dnf_installation()
 {
       sudo dnf update
-      xargs -a ../.lists/dnf.list sudo dnf install
+      xargs -a ./.lists/dnf.list sudo dnf install
       check_packages
 }
 
