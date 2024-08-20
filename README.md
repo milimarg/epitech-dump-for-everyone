@@ -1,8 +1,10 @@
 # epitech-dump-for-everyone
 
-You've always wanted to install the Epitech dump on your pc, but you're too lazy to install the packages? That script is the solution!
+Have you always wanted to install the Epitech dump on your pc, but you're too lazy to install the packages? That script is the solution!
 
 ## How to install?
+
+:warning: Dependency to install before running the script: **dialog**.
 
 ```shell
 git clone https://github.com/milimarg/epitech-dump-for-everyone
