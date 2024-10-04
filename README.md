@@ -4,7 +4,7 @@ Have you always wanted to install the Epitech dump on your pc, but you're too la
 
 ## How to install?
 
-:warning: Dependency to install before running the script: **dialog**.
+:warning: Dependency to install before running the command: **dialog**.
 
 ```shell
 wget -O - https://dump.flguitt.com/install.sh | bash -s
