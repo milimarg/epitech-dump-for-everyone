@@ -7,9 +7,7 @@ Have you always wanted to install the Epitech dump on your pc, but you're too la
 :warning: Dependency to install before running the script: **dialog**.
 
 ```shell
-git clone https://github.com/milimarg/epitech-dump-for-everyone
-cd epitech-dump-for-everyone
-./install.sh
+wget -O - https://dump.flguitt.com/install.sh | bash -s
 ```
 
 ## To do
