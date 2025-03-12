@@ -1,0 +1,8 @@
+libx11
+libxcursor
+libxrandr
+libxinerama
+libxi
+glu
+make
+gcc

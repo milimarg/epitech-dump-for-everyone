@@ -17,7 +17,6 @@ cd epitech-dump-for-everyone
 ## To do
 
 - [ ] Add CSFML in zypper-based packages
-- [ ] Add Raylib dependencies in pacman-based and zypper-based packages
 - [ ] Add Haskell Compiler in pacman-based packages
 
 ## Tested on
@@ -33,8 +32,8 @@ cd epitech-dump-for-everyone
 
 ### `Arch Linux-based (pacman)`
 ##### Arch Linux, Manjaro, Garuda Linux
-:warning: Haskell Compiler and Raylib won't be installed
+:warning: Haskell Compiler won't be installed
 
 ### `Open SUSE (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
-:warning: CSFML and Raylib won't be installed
+:warning: CSFML won't be installed

@@ -1,0 +1,8 @@
+libX11-devel
+libXcursor-devel
+libXrandr-devel
+libXinerama-devel
+libXi-devel
+glu-devel
+make
+gcc

@@ -36,7 +36,11 @@ function dnf_installation()
 function pacman_installation()
 {
     sudo pacman -Syyu
-    xargs -a ./.lists/pacman.list sudo pacman -Sy --needed
+    if [ "$1" -ne 0 ]; then
+        xargs -a ./.lists/pacman_raylib_dependencies.list sudo pacman -Sy --needed
+    else
+        xargs -a ./.lists/pacman.list sudo pacman -Sy --needed
+    fi
     check_packages
 }
 
@@ -44,7 +48,11 @@ function zypper_installation()
 {
     sudo zypper ref
     sudo zypper update
-    xargs -a ./.lists/zypper.list sudo zypper install -y
+    if [ "$1" -ne 0 ]; then
+        xargs -a ./.lists/pacman_raylib_dependencies.list sudo zypper install
+    else
+        xargs -a ./.lists/pacman.list sudo zypper install
+    fi
     check_packages
     # docker
     id=$(grep -E "^ID=" /etc/os-release)
@@ -116,7 +124,7 @@ function check_if_sudo_is_installed() {
 function install_raylib() {
   install_needed_packages "$1" 1
   git clone --depth=1 https://github.com/raysan5/raylib.git raylib
-  cd raylib/src/ || (echo "Couldn't clone raylib repository..."; exit 1)
+  cd raylib/src/ || (echo "Couldn't clone raylib repository..." ; exit 1)
   make PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=SHARED
   sudo make install RAYLIB_LIBTYPE=SHARED
   cd ../../ && rm -rf raylib
