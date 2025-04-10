@@ -42,6 +42,8 @@ function pacman_installation()
         xargs -a ./.lists/pacman.list sudo pacman -Sy --needed
     fi
     check_packages
+    # Glasgow Haskell Compiler (GHC)
+    curl -sSL https://get.haskellstack.org/ | sh
 }
 
 function zypper_installation()
