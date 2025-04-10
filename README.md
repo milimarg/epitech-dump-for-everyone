@@ -17,7 +17,6 @@ cd epitech-dump-for-everyone
 ## To do
 
 - [ ] Add CSFML in zypper-based packages
-- [ ] Add Haskell Compiler in pacman-based packages
 
 ## Tested on
 
