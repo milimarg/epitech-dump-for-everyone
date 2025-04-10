@@ -4,7 +4,7 @@ Have you always wanted to install the Epitech dump on your pc, but you're too la
 
 ## How to install?
 
-:warning: Dependency to install before running the command: **dialog**.
+⚠️ Dependency to install before running the command: **dialog**.
 
 To select an option to install: press **space** on it.
 
@@ -33,4 +33,4 @@ curl -L https://dump.guitt.re/autoinstall | bash
 
 ### `Open SUSE (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
-:warning: CSFML won't be installed
+⚠️ CSFML won't be installed
