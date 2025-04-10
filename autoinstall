@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -rf /tmp/epitech-dump-for-everyone-main
+curl -L https://github.com/milimarg/epitech-dump-for-everyone/archive/refs/heads/main.tar.gz | tar -xzC /tmp
+/tmp/epitech-dump-for-everyone-main/install.sh

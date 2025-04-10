@@ -9,9 +9,7 @@ Have you always wanted to install the Epitech dump on your pc, but you're too la
 To select an option to install: press **space** on it.
 
 ```shell
-git clone https://github.com/milimarg/epitech-dump-for-everyone
-cd epitech-dump-for-everyone
-./install.sh
+curl -L https://dump.guitt.re/autoinstall | bash
 ```
 
 ## To do
