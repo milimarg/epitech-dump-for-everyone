@@ -31,7 +31,7 @@ cd epitech-dump-for-everyone
 
 ### `Arch Linux-based (pacman)`
 ##### Arch Linux, Manjaro, Garuda Linux
-:warning: Haskell Compiler won't be installed
+(`stack` must be preprend to ghc-based commands, i.e. `ghci` becomes `stack ghci`)
 
 ### `Open SUSE (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
