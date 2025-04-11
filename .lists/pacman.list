@@ -10,7 +10,6 @@ gdb
 git
 glibc
 gmp
-ksh
 elfutils
 libjpeg
 libvorbis
@@ -67,6 +66,5 @@ cargo
 mariadb
 x264
 docker
-tar
 xz
 xclip

@@ -68,8 +68,20 @@ function zypper_installation()
     fi
 }
 
+function gentoo_installation()
+{
+    sudo emaint -a sync
+    sudo emerge -avuDN @world
+    if [ "$1" -ne 0 ]; then
+        xargs -a ./.lists/gentoo_raylib_dependencies.list sudo emerge -u
+    else
+        xargs -a ./.lists/gentoo.list sudo emerge -u
+    fi
+    check_packages
+}
+
 function install_needed_packages() {
-  package_managers=("pacman" "dnf" "apt" "zypper")
+  package_managers=("pacman" "dnf" "apt" "zypper" "emerge")
   case "${package_managers[$1]}" in
             apt)
                 apt_installation "$2"
@@ -82,6 +94,9 @@ function install_needed_packages() {
                 ;;
             zypper)
                 zypper_installation "$2"
+                ;;
+            emerge)
+                gentoo_installation "$2"
                 ;;
     esac
 }

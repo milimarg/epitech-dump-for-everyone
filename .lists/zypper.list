@@ -11,7 +11,6 @@ gdb
 git
 glibc
 gmp-devel
-ksh
 libelf-devel
 libjpeg-turbo
 libvorbis-devel
@@ -70,6 +69,5 @@ irrlicht-devel
 rust
 cargo
 mariadb-server
-tar
 xz
 xclip

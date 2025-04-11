@@ -14,7 +14,6 @@ git
 gnupg
 libc6-dev
 libgmp3-dev
-ksh
 elfutils
 libjpeg-dev
 libarmadillo-dev
@@ -35,7 +34,6 @@ mesa-common-dev
 libopenal-dev
 libalut0
 libalut-dev
-make
 tree
 build-essential
 tar
@@ -49,17 +47,12 @@ python3
 rlwrap
 ruby
 strace
-tar
 tcsh
 tmux
 sudo
-tree
-unzip
 valgrind
 vim
 emacs-nox
-zip
-zsh
 qtcreator
 qtbase5-dev
 qt5-qmake
@@ -82,7 +75,6 @@ rustc
 cargo
 mariadb-server
 x264
-python3-pip
 xz-utils
 ghc
 xclip

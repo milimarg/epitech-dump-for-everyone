@@ -14,7 +14,8 @@ curl -L https://dump.guitt.re/autoinstall | bash
 
 ## To do
 
-- [ ] Add CSFML in zypper-based packages
+- [ ] Add CSFML in zypper-based and gentoo-based packages
+- [ ] Add raylib in gentoo-based packages
 
 ## Tested on
 
@@ -31,6 +32,10 @@ curl -L https://dump.guitt.re/autoinstall | bash
 ##### Arch Linux, Manjaro, Garuda Linux
 (`stack` must be preprend to ghc-based commands, i.e. `ghci` becomes `stack ghci`)
 
-### `Open SUSE (zypper)`
+### `OpenSUSE-based (zypper)`
 ##### OpenSUSE Tumbleweed, OpenSUSE Leap
+⚠️ CSFML won't be installed
+
+### `Gentoo-based (emerge)`
+##### Gentoo
 ⚠️ CSFML won't be installed
