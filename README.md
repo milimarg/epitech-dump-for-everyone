@@ -8,7 +8,7 @@ Have you ever wanted to install the Epitech dump on your PC, but were too lazy t
 To select an option to install: press **space** on it.
 
 ```shell
-curl -L https://dump.guitt.re/autoinstall | bash
+curl -sL https://dump.guitt.re/autoinstall | bash
 ```
 
 ## To do
