@@ -1,5 +1,7 @@
 # epitech-dump-for-everyone
 
+## This repository is archived! The current maintained repository is [here](https://codeberg.org/milimarg/epitech-dump-for-everyone).
+
 Have you ever wanted to install the Epitech dump on your PC, but were too lazy to install the packages? This script is the solution!
 ## How to install?
 
